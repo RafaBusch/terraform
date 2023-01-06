@@ -7,13 +7,13 @@ terraform {
       version = "4.48.0"
     }
     random = {
-    source = "hashicorp/random"
-    version = "3.4.3"
+      source  = "hashicorp/random"
+      version = "3.4.3"
     }
   }
 }
-   
+
 provider "aws" {
-    region = var.aws_region
-  
+  region = var.aws_region
+
 }
