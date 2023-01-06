@@ -3,7 +3,6 @@ resource "aws_s3_bucket" "this" {
 
   tags = local.common_tags #local sem "s" usa para referenciar alguma variavel do locals
   #e common_tags é o nome do locals declarado no outro arquivo (na mesma pasta)
-
 }
 
 resource "aws_s3_object" "this" { # o "this" é o nome do bucket aqui no terraform, caso fosse subir
@@ -12,4 +11,14 @@ resource "aws_s3_object" "this" { # o "this" é o nome do bucket aqui no terrafo
   key    = "config/${local.ip_filepath}"
   source = local.ip_filepath
   etag   = filemd5(local.ip_filepath)
+}
+
+resource "aws_s3_bucket" "manual" {
+  bucket = "criandobucketnamaobusch"
+  tags = {
+    criado        = "manualmente"
+    criadoEm      = "04/01/2023"
+    importadoEm   = "06/01/2023"
+    gerenciadoPor = "Terraform"
+  }
 }
