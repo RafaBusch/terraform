@@ -1,0 +1,5 @@
+1 - primeiro passo para funcionar o script colar isso no terminal: "sudo apt-get install jq"
+"chmod 764 whatismyip.sh" 
+2 - rodar um pequeno arquivo whatismyip.sh estando dentro da pasta aonde está o projeto, vc deixa o arquivo lá e roda com o comando: "chmod +x whatismyip.sh"
+3 - dar o comando: "terraform init"
+4 - no caso sabemos que está funcionando entao pode pular para o: "terraform apply -auto-approve"
