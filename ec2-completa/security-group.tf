@@ -4,7 +4,7 @@ resource "aws_security_group" "security-group" {
   description = "SG para liberar meu ip para acesso via ssh"
   vpc_id      = aws_vpc.vpc.id
 
-#poderia ter o ingress aqui mas escolhi nao deixar ja que os codigos abaixo vão liberar meu ip
+  #poderia ter o ingress aqui mas escolhi nao deixar ja que os codigos abaixo vão liberar meu ip
   egress {
     from_port   = 0
     to_port     = 0

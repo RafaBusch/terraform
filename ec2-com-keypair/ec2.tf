@@ -19,8 +19,8 @@ resource "tls_private_key" "rsa" {
 }
 #criando um arquivo na maquina para deixar a secret key
 resource "local_file" "tf-key" {
-    content  = tls_private_key.rsa.private_key_pem
-    filename = "tfkey"
+  content  = tls_private_key.rsa.private_key_pem
+  filename = "tfkey"
 }
 
 #pegando os dados da ami
@@ -43,7 +43,7 @@ data "aws_ami" "ubuntu" {
 resource "aws_instance" "web" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
-  key_name = "TF_key"
+  key_name      = "TF_key"
   tags = {
     Name = "teste key pair com Terraform"
   }
